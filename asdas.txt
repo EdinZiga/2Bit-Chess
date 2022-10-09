@@ -1,0 +1,18 @@
+  if((pos>=8 && pos<=15) || (pos>=48 && pos<=63)) /// First row
+           {
+               if(bw==0){mvs[0]=pos+8; mvs[1]=pos+16;}
+                if(bw==1){mvs[0]=pos-8; mvs[1]=pos-16;}
+           } else {
+           if(bw==0){mvs[0]=pos+8;} /// All other positions
+                if(bw==1){mvs[0]=pos-8;}
+           }
+
+
+  if(bds[pos-7]==0 && (pos-7)/8!=pos/8) ///Left Corner
+               {
+                   mvs[2]=pos-7;
+               }
+               if(bds[pos-9]==0 && pos/8-(pos-9)/8!=2) ///Right Corner
+               {
+                   mvs[3]=pos-9;
+               }
